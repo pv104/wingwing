@@ -11,3 +11,14 @@
 
 
 </details>
+<details>
+<summary style="font-size: 1.5em;">
+10월 23일
+</summary>
+
+### 한 일
+* 주제 확정
+* 주제 구체화
+
+
+</details>
