@@ -33,3 +33,8 @@
 - 테스트 해볼 수 있는것들 빠르게 테스트 (지도 맵핑 작업, 경로 따기)
 - 컨님 회의
 </details>
+
+<details>
+<summary>241024</summary>
+주제 폭파
+</details>
