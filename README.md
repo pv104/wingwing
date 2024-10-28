@@ -43,3 +43,17 @@
 
 
 </details>
+
+# Week 3
+<details>
+<summary style="font-size: 1.5em;">
+10월 28일
+</summary>
+
+### 한 일
+* 주제 확정
+* 구현에 필요한 장비 조사 및 교보재 신청
+* 기능 설계
+
+
+</details>
