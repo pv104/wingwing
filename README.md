@@ -57,3 +57,13 @@
 
 
 </details>
+<details>
+<summary style="font-size: 1.5em;">
+10월 29일
+</summary>
+
+### 한 일
+* 아키텍처 설계
+
+
+</details>
