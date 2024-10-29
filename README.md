@@ -55,3 +55,18 @@
         장애물 탐지
 * 너무 장난스러운 서비스가 되지는 않을까..? 다시 얘기 필요..
 </details>
+
+<details>
+<summary>241028</summary>
+</details>
+
+<details>
+<summary>241029</summary>
+* API 연동규격서 작성
+* 아키텍처 설계
+* 스테이션 환경 테스트 (현재 진행중)
+</details>
+
+
+
+
