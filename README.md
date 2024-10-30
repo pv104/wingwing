@@ -67,3 +67,14 @@
 
 
 </details>
+<details>
+<summary style="font-size: 1.5em;">
+10월 30일
+</summary>
+
+### 한 일
+* 아키텍처 설계
+* 사용차 추적 기능 구현을 위한 AI 모델 조사
+
+
+</details>
