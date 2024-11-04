@@ -1,5 +1,11 @@
 package com.ssafy.shieldroneapp.data.source.remote
 
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.WebSocket
+import okhttp3.WebSocketListener
+import android.util.Log
+
 /**
  * WebSocket 연결을 관리하는 클래스.
  *
@@ -17,3 +23,33 @@ package com.ssafy.shieldroneapp.data.source.remote
  * - WebSocketConfig: 설정 값을 가져와 연결 옵션(예: 재연결 간격, 타임아웃)을 설정
  * - WebSocketErrorHandler: 연결 중 발생하는 오류를 처리
  */
+
+class WebSocketConnectionManager(
+    private val webSocketService: WebSocketService
+) {
+    private val client = OkHttpClient()
+    private var webSocket: WebSocket? = null
+
+    fun connect() {
+        val request = Request.Builder().url(WebSocketConfig.SERVER_URL).build()
+        webSocket = client.newWebSocket(request, object : WebSocketListener() {
+            override fun onOpen(webSocket: WebSocket, response: okhttp3.Response) {
+                Log.d("WebSocket", "Connected to the server")
+            }
+
+            override fun onFailure(webSocket: WebSocket, t: Throwable, response: okhttp3.Response?) {
+                Log.e("WebSocket", "Connection failed", t)
+                webSocketService.handleReconnect()
+            }
+        })
+    }
+
+    fun disconnect() {
+        webSocket?.close(1000, "Disconnecting")
+        webSocket = null
+    }
+
+    fun isConnected(): Boolean {
+        return webSocket != null
+    }
+}

@@ -18,3 +18,44 @@ package com.ssafy.shieldroneapp.data.source.remote
  * @property webSocketClient: 서버와의 WebSocket 통신 클라이언트 객체
  * @property isConnected: WebSocket 연결 상태를 나타내는 Boolean 값
  */
+
+import android.util.Log
+import com.ssafy.shieldroneapp.data.model.HeartRateData
+
+class WebSocketService(
+    private val webSocketConnectionManager: WebSocketConnectionManager,
+    private val webSocketMessageSender: WebSocketMessageSender
+) {
+    private var isConnected = false
+
+    fun initialize() {
+        webSocketConnectionManager.connect()
+        isConnected = webSocketConnectionManager.isConnected()
+        if (isConnected) {
+            Log.d("WebSocketService", "WebSocket 연결 성공")
+            // webSocketSubscriptions.subscribeToTopics()
+        } else {
+            Log.e("WebSocketService", "WebSocket 연결 실패")
+        }
+    }
+
+    fun shutdown() {
+        webSocketConnectionManager.disconnect()
+        isConnected = false
+        Log.d("WebSocketService", "WebSocket 서비스 종료")
+    }
+
+    fun sendHeartRateData(data: HeartRateData) {
+        if (isConnected) {
+            webSocketMessageSender.sendWatchSensorData(data)
+        } else {
+            Log.e("WebSocketService", "WebSocket이 연결되어 있지 않음")
+        }
+    }
+
+    fun handleReconnect() {
+        Log.d("WebSocketService", "재연결 시도 중...")
+        shutdown() // 기존 연결 해제
+        initialize() // 다시 연결 시도
+    }
+}

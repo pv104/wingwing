@@ -13,3 +13,23 @@ package com.ssafy.shieldroneapp.data.source.remote
  * 이 클래스는 WebSocketConnectionManager에 의해 import되며,
  * WebSocketConnectionManager를 통해 WebSocketService와 간접적으로 연결됩니다.
  */
+
+class WebSocketConfig {
+    companion object {
+        const val SERVER_URL = "ws://localhost:8080/shieldrone"
+        private const val TIMEOUT = 10000L // (ms)
+        private const val RECONNECT_INTERVAL = 5000L // (ms)
+
+        fun getWebSocketUrl(): String {
+            return SERVER_URL
+        }
+
+        fun getReconnectInterval(): Long {
+            return RECONNECT_INTERVAL
+        }
+
+        fun getTimeout(): Long {
+            return TIMEOUT
+        }
+    }
+}

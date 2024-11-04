@@ -1,12 +1,39 @@
 package com.ssafy.shieldroneapp.services.connection
 
-/**
- * 모바일과 워치 간의 데이터 통신을 관리하는 서비스 클래스.
- *
- * 워치에서 수신한 심박수, 가속도계, 음성 데이터를 모바일로 전달하고, 이를 서버에 전송한다.
- * 모바일-워치 간의 연결 상태를 관리하며, 데이터 수신 및 전송 로직을 포함하여
- * 실시간 데이터 동기화를 위해 연결 상태를 지속적으로 모니터링하고 필요 시 재연결을 시도한다.
- *
- * @property sensorDataRepository 센서 데이터를 로컬과 서버에 동기화하는 SensorDataRepository 객체
- * @property connectionManager 모바일-워치 간 연결을 관리하는 ConnectionManager 객체
- */
+import android.content.Context
+import android.util.Log
+import com.google.android.gms.wearable.Node
+import com.google.android.gms.wearable.Wearable
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import javax.inject.Inject
+import javax.inject.Singleton
+import com.ssafy.shieldroneapp.utils.await
+
+@Singleton
+class WatchConnectionService @Inject constructor(
+    private val context: Context
+) {
+    private val messageClient = Wearable.getMessageClient(context)
+    private val nodeClient = Wearable.getNodeClient(context)
+
+    private val _isConnected = MutableStateFlow(false)
+    val isConnected = _isConnected.asStateFlow()
+
+    suspend fun checkConnection() {
+        try {
+            val nodes = nodeClient.connectedNodes.await()
+            _isConnected.value = nodes.isNotEmpty()
+            nodes.forEach { node ->
+                Log.d(TAG, "Connected node: ${node.displayName}")
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error checking connection", e)
+            _isConnected.value = false
+        }
+    }
+
+    companion object {
+        private const val TAG = "WatchConnectionService"
+    }
+}

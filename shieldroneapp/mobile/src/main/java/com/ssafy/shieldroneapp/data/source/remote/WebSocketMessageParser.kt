@@ -10,3 +10,15 @@ package com.ssafy.shieldroneapp.data.source.remote
  *
  * 이 클래스는 WebSocketSubscriptions에 의해 import되어 수신한 메시지를 파싱하는 데 사용됩니다.
  */
+
+import com.ssafy.shieldroneapp.data.model.HeartRateData
+import com.google.gson.Gson
+
+class WebSocketMessageParser {
+    private val gson = Gson()
+
+    fun parseHeartRateData(message: String): HeartRateData {
+        return gson.fromJson(message, HeartRateData::class.java)
+    }
+
+}
