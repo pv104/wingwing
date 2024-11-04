@@ -3,6 +3,17 @@
 <details>
   <summary>3주차</summary>
 
+### 🔖 11/01(금)
+
+- [x] 간트 차트 업데이트 및 일정 수정
+- [x] API 연동 규격서 검토 및 수정
+  - [x] 유저
+  - [x] 마이 페이지
+  - [x] 경로
+  - [x] 드론
+- [x] 전체 프로젝트 파일 생성 및 주석 작성 (100% 완료)
+  - [x] 주석: 역할 / 전반 로직 / 데이터 / 연동사항 등
+
 ### 🔖 10/31(목)
 
 - [x] 갤럭시 가상기기(Phone Pixel 5) 생성
@@ -13,7 +24,7 @@
   - [x] source: local/ remote
   - [x] services: base / connection / sensor / location / alert
   - [x] ui: components / theme / landing / authentication / map / qr / mypage
-- [x] 전체 프로젝트 파일 생성 및 주석 작성
+- [x] 전체 프로젝트 파일 생성 및 주석 작성 (80% 완료)
   - [x] 주석: 역할 / 전반 로직 / 데이터 / 연동사항 등
 - [x] 피그마 공통 컴포넌트 추출
 - [x] 공통 컴포넌트 생성 및 타입별 구성
