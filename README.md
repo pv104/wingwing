@@ -3,6 +3,83 @@
 <details>
   <summary>4주차</summary>
 
+### 🔖 11/05(화)
+
+- [x] 4주차 Jira 스프린트 이슈 작성
+- [x] 간트 차트 및 지라 업데이트
+- [x] 프로젝트 의존성 및 빌드 설정 추가
+- [x] 프로젝트 전체에 Hilt, KAPT 추가
+- [x] 모바일 build.gradle 설정
+- [x] Hilt(종속성 주입 라이브러리), KAPT(어노테이션 플러그인), ViewModel 의존성 추가
+- [x] MobileMainApplication 생성
+- [x] 모바일 Manifest 앱 권한 설정
+  - [x] 인터넷, 블루투스, 알림 권한
+  - [x] 네트워크 상태 확인 권한
+  - [x] HTTP 통신, wearable API 설정
+- [x] WearOS 연동 설정 추가
+- [x] MobileMainActivity 수정
+- [x] Hilt 적용, Jetpack Compose 전환
+- [x] Navigation Compose 화면 전환
+- [x] Auth 플로우 기본 구조 구현
+- [x] 사용자 인증 데이터 모델 작성
+  - [x] User, UserAuth, Guardian
+  - [x] Tokens, VerificationResponse
+- [x] UserRepository 인터페이스 및 구현체 작성
+- [x] UserLocalDataSource 인터페이스 및 구현체 작성
+- [x] 사용자 정보 및 토큰 암호화 (EncryptedSharedPreferences)
+- [x] 동기/비동기 나누어 인증 토큰 관리
+- [x] NetworkUtils 네트워크 연결 상태 확인 유틸 생성
+- [x] repository에서 API 호출 전 네트워크 상태 확인용 공통 메서드로 처리
+- [x] build.gradle 의존성 추가
+  - [x] Android Security
+  - [x] Gson (직렬화/역직렬화)
+  - [x] Retrofit, OKHttp
+  - [x] Compose SystemUIController
+- [x] 상태 바 시스템 UI 스타일링 (다크 모드)
+- [x] Constants 파일에 네비게이션 경로 상수화
+- [x] ApiConstants (서버 통신 관련 url, 타임아웃 설정 등)
+- [x] NetworkModule에 DI 설정 (Retrofit, OKHttpClient, ApiService)
+- [x] ApiService 메서드 작성 (사용자 인증 및 설정, 토큰 갱신 등)
+- [x] ApiInterceptor
+  - [x] 기본 헤더 추가
+  - [x] 선택적 토큰 추가
+  - [x] 토큰 갱신, 재시도
+- [x] ApiErrorHandler 에러 처리
+- [x] 데일리 KPT 회고
+
+  - **Keep (잘해오고 있는 것들)**
+
+                - BOM을 활용하여 Compose 버전들을 통합 관리함으로써 프로젝트 버전 호환성을 높였다.
+                - 상태 바 시스템 UI 설정을 추가하여 다크 모드에 최적화된 스타일을 적용함으로써 시각적 일관성과 통일성을 높였다.
+                - navController를 활용해 인증 완료 후 뒤로 가기 버튼을 눌러도 다시 돌아갈 수 없도록 백스택에서 제거하여, 불필요한 화면 이동을 방지하고 사용자 경험을 향상시켰다.
+                - 각 데이터 모델(User, UserAuth, Guardian)을 역할에 맞게 분리하고, 필요한 메서드를 관련된 데이터 클래스 내부에 작성함으로써 코드의 응집도를 높였다.
+                - API 관련 상수(ApiConstants)와 앱 전역 상수(Constants)를 구분하여 정보를 체계적으로 관리하고 응집도를 높였다.
+                - NetworkUtils 파일을 생성해 Repository에서 API 요청 전 네트워크 연결 상태를 공통 메서드로 확인함으로써 네트워크 연결이 없을 경우 불필요한 API 호출을 방지하고 앱의 안정성을 강화했다.
+                - EncryptedSharedPreferences를 사용해 민감한 개인 정보를 AES256 암호화 방식으로 안전하게 저장하여 보안을 강화했다.
+                - ApiService, ApiConstants, ApiInterceptor, ApiErrorHandler, NetworkModule, NetworkUtils를 역할별로 분리해 서버와의 통신 및 에러 처리를 체계적으로 관리했다.
+                - NetworkModule에서 Hilt 모듈을 통해 Retrofit과 OkHttpClient 설정을 분리하고, 의존성 주입을 활용하여 각 클래스가 직접 의존성을 관리하지 않도록 함으로써 결합도를 낮추고 객체 관리를 효율적으로 수행했다. 이를 통해 네트워크 요청을 효율적으로 관리하고 코드의 재사용성과 유지보수성을 높였다.
+                - NetworkModule에서 만든 Retrofit 인터페이스를 사용해 ApiService에서 HTTP 통신을 명확하게 정의하고, 이를 통해 API 요청이 일관된 형식을 유지하게 하여 코드의 가독성을 향상시켰다.
+                - OkHttpClient에 HttpLoggingInterceptor를 추가해 디버깅을 용이하게 하고, ApiInterceptor를 통해 모든 API 요청에 기본 헤더를 설정하여 코드의 일관성과 안정성을 강화했다.
+                - ApiInterceptor를 사용해 토큰이 필요한 경우에만 액세스 토큰을 Authorization 헤더에 추가하며, 401 응답 시 토큰 갱신 및 요청 재시도를 구현해 인증 처리의 안정성을 높였다.
+                - SharedPreferences에서 동기와 비동기 방식을 나누어 관리하여, 동기 방식의 호출만 지원하는 OkHttpClient 기반의 ApiInterceptor에서도 API 요청 시 필요한 토큰을 즉시 가져와 활용할 수 있도록 했다.
+
+  - **Problem(문제되는 점들)**
+
+            - 사용자 인증 부분이 하나씩 처리하면 될 줄 알았는데, 줄줄이 사탕으로 엮여 있어 파일 하나를 작업하려면 타고 타고 들어가서 죄다 연결되어 있다 보니 너무 헷갈린다. UI 제외하고는 전체 부분이 동시 작업 중이다. (마이페이지 설정 포함)
+            - 생각보다 UI 고민할 시간이 없을 것 같다.
+            - Kotlin의 모듈화된 아키텍처(데이터 모델, 레포지토리, 데이터 소스 등)를 이해하고 적응하는 데 어려움을 겪고 있다. 각 레이어 간의 상호작용 및 의존성 관리가 복잡하다.
+            - API 관련 상수, 인터페이스, 구현체 등 다양한 구조를 나누어 관리하다 보니, 전체적인 흐름을 파악하는 데 시간이 소요되고, 새로운 기능을 추가할 때 더 많은 고려가 필요하다.
+            - 슬슬 드론과 연결해야 할 때가 다가올 것 같은데 사용자 인증 과정에 머물러 있다.
+
+  - **Try(새롭게 시도해볼 것들)**
+
+            - 빠르게 사용자 인증 로직 마무리하고 UI 구현할 것
+            - 드론 배정 요청 및 매칭 테스트 할 수 있도록 이번 주에 꼭 맵 부분 작업 시작할 것
+            - 일정 관리가 중요해 질 것 같다. 시간을 더 많이 투자할 것
+            - 세부 내용은 최대한 제거하고 핵심 위주로 작업할 것
+            - 각 레이어와 모듈의 역할을 명확히 이해하기 위해 주석을 추가할 것
+            - 복잡한 구조로 인해 디버깅이 어려워지는 것을 방지하기 위해, 주요 로직에 디버깅 로그를 추가하여 실행 흐름과 데이터 상태를 추적할 수 있도록 할 것
+
 ### 🔖 11/04(월)
 
 - [x] 간트 차트 업데이트 및 일정 수정
