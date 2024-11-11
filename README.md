@@ -3,6 +3,22 @@
 <details>
   <summary>4주차</summary>
 
+### 🔖 11/08(금)
+
+- [x] 간트 차트 및 지라 업데이트
+- [x] 3시 컨설턴트 님 미팅
+- [x] 서버 요청/응답 data class 맞춰서 전체 코드 수정
+- [x] User 관련 구현체(Impl) 싱글턴 처리
+- [x] UserRepositoryImpl 공통 메서드에 맞춰 Result로 전체 감싸서 결과 반환하도록 형식 통일
+- [x] TokenRefresher 응답 형식 맞춤
+- [x] ApiService 서버 통신 형식 통일
+- [x] 회원가입 시 userData 형식 수정 및 서버 요청 객체 파일로 통합
+- [x] 회원가입/로그인 분기 및 API 연동
+- [x] 로컬 저장소에 토큰 저장/조회
+- [x] 토큰 유무에 따라 시작 화면 설정
+- [x] refreshToken 재발급 API 연동
+- [x] 네비 Constants에 map 경로 추가
+
 ### 🔖 11/07(목)
 
 - [x] 간트 차트 및 지라 업데이트
