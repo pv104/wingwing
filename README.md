@@ -3,6 +3,16 @@
 <details>
   <summary>4주차</summary>
 
+### 🔖 11/10(일)
+
+- [x] Notion 문서 작업
+  - [x] Client 폴더 구조 및 통신 플로우 정리
+  - [x] 모바일 개발 환경 설정 히스토리 작성
+  - [x] 팀 설정 공유용 Config Secrets 작성 (카카오 API 키)
+- [x] 스타벅스 과천점 모여서 팀플 ..
+- [x] 메인 맵 전체 관리 (ING)
+- [x] MapScreen, MapViewModel 대실패
+
 ### 🔖 11/09(토)
 
 - [x] 간트 차트 및 지라 업데이트
