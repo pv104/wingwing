@@ -3,6 +3,31 @@
 <details>
   <summary>4주차</summary>
 
+### 🔖 11/09(토)
+
+- [x] 간트 차트 및 지라 업데이트
+- [x] 사용자 인증 화면 전체 background 적용
+- [x] 카카오 개발자 콘솔
+  - [x] 애플리케이션 등록 및 API 키 발급
+  - [x] android 플랫폼 등록
+- [x] 갤럭시 실물 기기 연동
+- [x] settings.gradle 카카오 맵 SDK 저장소 추가
+- [x] manifest에 API 키 meta data 추가
+- [x] build.gradle 카카오 맵 SDK 설정
+  - [x] manifest meta data에 API 삽입
+  - [x] buildConfig에 API 키 추가
+  - [x] Kakao Map SDK 의존성 추가
+- [x] build.gradle - compose UI 테스트 의존성 버전 명시하여 오류 수정
+- [x] MainApplication에서 카카오 SDK 초기화
+- [x] MapScreen에서 카카오 맵 초기화
+  - [x] AndroidView 사용하여 Compose UI 환경에서 MapView를 UI에 통합
+  - [x] MapView 생명 주기 관리
+  - [x] 서울 멀티캠퍼스 위치로 초기화, 줌 레벨 설정
+- [x] gradle.properties
+  - [x] 카카오 API 키 추가
+  - [x] Git 추적에서 제거
+  - [x] gitignore에 추가
+
 ### 🔖 11/08(금)
 
 - [x] 간트 차트 및 지라 업데이트
