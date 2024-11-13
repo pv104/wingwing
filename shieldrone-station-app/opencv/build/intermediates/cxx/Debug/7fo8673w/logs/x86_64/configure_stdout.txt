@@ -14,4 +14,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/SSAFY/project/S11P31A307/shieldrone-station-app/opencv/.cxx/Debug/7fo8673w/x86_64
+-- Build files have been written to: C:/Users/SSAFY/Desktop/project/S11P31A307/shieldrone-station-app/opencv/.cxx/Debug/7fo8673w/x86_64

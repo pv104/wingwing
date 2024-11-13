@@ -1,16 +1,23 @@
 package com.shieldrone.station.ui
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import com.shieldrone.station.constant.FlightContstant.Companion.EARTH_RADIUS
 import com.shieldrone.station.constant.FlightContstant.Companion.FLIGHT_CONTROL_TAG
 import com.shieldrone.station.controller.RouteController
 import com.shieldrone.station.databinding.FlightControlActivityBinding
 import com.shieldrone.station.model.FlightControlVM
+import com.shieldrone.station.service.gps.AppServerLocationProvider
+import com.shieldrone.station.service.gps.LocationProvider
 import com.shieldrone.station.service.route.RouteAdapter
 import kotlin.math.atan2
 import kotlin.math.cos
@@ -24,10 +31,15 @@ class FlightControlActivity : AppCompatActivity() {
     private val flightControlVM: FlightControlVM by viewModels()
     private lateinit var routeAdapter: RouteAdapter
     private lateinit var routeController: RouteController
+    private lateinit var locationProvider: LocationProvider
+    private var isTracking = false
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 나중에 ClientLocationProvider로 고쳐야 한다.
+        locationProvider = AppServerLocationProvider(this)
 
         binding = FlightControlActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -79,6 +91,16 @@ class FlightControlActivity : AppCompatActivity() {
         binding.btnGetTargetLocation.setOnClickListener {
             routeController.startReceivingLocation()
             Log.d(FLIGHT_CONTROL_TAG, "Started receiving location updates")
+        }
+        binding.btnCCAA.setOnClickListener {
+            if (isTracking) {
+                stopTrackingLocation()
+                binding.btnCCAA.text = "CCAA"
+            } else {
+                startTrackingLocation()
+                binding.btnCCAA.text = "추적 중지"
+            }
+            isTracking = !isTracking
         }
     }
 
@@ -193,6 +215,60 @@ class FlightControlActivity : AppCompatActivity() {
         val c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
         return EARTH_RADIUS * c
+    }
+
+    private fun startTrackingLocation() {
+        if (checkLocationPermission()) {
+            locationProvider.startLocationUpdates { latitude, longitude ->
+                flightControlVM.setTargetLocation(latitude, longitude)
+                Log.d(FLIGHT_CONTROL_TAG, "Updated Target Location to: $latitude, $longitude")
+                binding.txtMessage.text = "목표 위치가 업데이트되었습니다."
+
+                // 드론 이동 시작
+                flightControlVM.moveToTarget()
+            }
+        }
+    }
+
+    private fun stopTrackingLocation() {
+        locationProvider.stopLocationUpdates()
+        binding.txtMessage.text = "위치 추적이 중지되었습니다."
+    }
+
+    private val LOCATION_PERMISSION_REQUEST_CODE = 1002
+
+    private fun checkLocationPermission(): Boolean {
+        return if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                LOCATION_PERMISSION_REQUEST_CODE
+            )
+            false
+        } else {
+            true
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                // 권한 허용됨
+                if (isTracking) {
+                    startTrackingLocation()
+                }
+            } else {
+                // 권한 거부됨
+                Toast.makeText(this, "위치 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
 

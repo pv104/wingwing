@@ -203,5 +203,11 @@
             android:layout_weight="1"
             android:text="초기화 " />
     </LinearLayout>
+    <Button
+        android:id="@+id/btnCCAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CCAA"
+        android:padding="6dp" />
 
 </LinearLayout>

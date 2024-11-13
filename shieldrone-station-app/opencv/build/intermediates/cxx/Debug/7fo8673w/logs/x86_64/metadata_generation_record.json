@@ -2,7 +2,7 @@
   {
     "level_": 0,
     "message_": "Start JSON generation. Platform version: 21 min SDK version: x86_64",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -11,12 +11,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 2114182699
+    "memoizedHashCode": -1661722513
   },
   {
     "level_": 0,
-    "message_": "rebuilding JSON C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\\android_gradle_build.json due to:",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "message_": "rebuilding JSON C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\\android_gradle_build.json due to:",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -25,12 +25,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 2003944153
+    "memoizedHashCode": 997978557
   },
   {
     "level_": 0,
     "message_": "- no fingerprint file, will remove stale configuration folder",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -39,12 +39,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -1283629269
+    "memoizedHashCode": -764567185
   },
   {
     "level_": 0,
-    "message_": "removing stale contents from \u0027C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\u0027",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "message_": "removing stale contents from \u0027C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\u0027",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -53,12 +53,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -1541260169
+    "memoizedHashCode": 1264261147
   },
   {
     "level_": 0,
-    "message_": "created folder \u0027C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\u0027",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "message_": "created folder \u0027C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\u0027",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -67,12 +67,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -1909588501
+    "memoizedHashCode": -1055382129
   },
   {
     "level_": 0,
-    "message_": "executing cmake @echo off\n\"C:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\cmake.exe\" ^\n  \"-HC:\\\\Users\\\\SSAFY\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\libcxx_helper\" ^\n  \"-DCMAKE_SYSTEM_NAME\u003dAndroid\" ^\n  \"-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\" ^\n  \"-DCMAKE_SYSTEM_VERSION\u003d21\" ^\n  \"-DANDROID_PLATFORM\u003dandroid-21\" ^\n  \"-DANDROID_ABI\u003dx86_64\" ^\n  \"-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\" ^\n  \"-DANDROID_NDK\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\" ^\n  \"-DCMAKE_ANDROID_NDK\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\" ^\n  \"-DCMAKE_TOOLCHAIN_FILE\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\\\\build\\\\cmake\\\\android.toolchain.cmake\" ^\n  \"-DCMAKE_MAKE_PROGRAM\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\ninja.exe\" ^\n  \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\\\Users\\\\SSAFY\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\7fo8673w\\\\obj\\\\x86_64\" ^\n  \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\\\Users\\\\SSAFY\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\7fo8673w\\\\obj\\\\x86_64\" ^\n  \"-DCMAKE_BUILD_TYPE\u003dDebug\" ^\n  \"-BC:\\\\Users\\\\SSAFY\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\.cxx\\\\Debug\\\\7fo8673w\\\\x86_64\" ^\n  -GNinja ^\n  \"-DANDROID_STL\u003dc++_shared\"\n",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "message_": "executing cmake @echo off\n\"C:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\cmake.exe\" ^\n  \"-HC:\\\\Users\\\\SSAFY\\\\Desktop\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\libcxx_helper\" ^\n  \"-DCMAKE_SYSTEM_NAME\u003dAndroid\" ^\n  \"-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\" ^\n  \"-DCMAKE_SYSTEM_VERSION\u003d21\" ^\n  \"-DANDROID_PLATFORM\u003dandroid-21\" ^\n  \"-DANDROID_ABI\u003dx86_64\" ^\n  \"-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\" ^\n  \"-DANDROID_NDK\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\" ^\n  \"-DCMAKE_ANDROID_NDK\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\" ^\n  \"-DCMAKE_TOOLCHAIN_FILE\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\\\\build\\\\cmake\\\\android.toolchain.cmake\" ^\n  \"-DCMAKE_MAKE_PROGRAM\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\ninja.exe\" ^\n  \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\\\Users\\\\SSAFY\\\\Desktop\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\7fo8673w\\\\obj\\\\x86_64\" ^\n  \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\\\Users\\\\SSAFY\\\\Desktop\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\7fo8673w\\\\obj\\\\x86_64\" ^\n  \"-DCMAKE_BUILD_TYPE\u003dDebug\" ^\n  \"-BC:\\\\Users\\\\SSAFY\\\\Desktop\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\.cxx\\\\Debug\\\\7fo8673w\\\\x86_64\" ^\n  -GNinja ^\n  \"-DANDROID_STL\u003dc++_shared\"\n",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -81,12 +81,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 1686926592
+    "memoizedHashCode": 1042090392
   },
   {
     "level_": 0,
-    "message_": "@echo off\n\"C:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\cmake.exe\" ^\n  \"-HC:\\\\Users\\\\SSAFY\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\libcxx_helper\" ^\n  \"-DCMAKE_SYSTEM_NAME\u003dAndroid\" ^\n  \"-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\" ^\n  \"-DCMAKE_SYSTEM_VERSION\u003d21\" ^\n  \"-DANDROID_PLATFORM\u003dandroid-21\" ^\n  \"-DANDROID_ABI\u003dx86_64\" ^\n  \"-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\" ^\n  \"-DANDROID_NDK\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\" ^\n  \"-DCMAKE_ANDROID_NDK\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\" ^\n  \"-DCMAKE_TOOLCHAIN_FILE\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\\\\build\\\\cmake\\\\android.toolchain.cmake\" ^\n  \"-DCMAKE_MAKE_PROGRAM\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\ninja.exe\" ^\n  \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\\\Users\\\\SSAFY\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\7fo8673w\\\\obj\\\\x86_64\" ^\n  \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\\\Users\\\\SSAFY\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\7fo8673w\\\\obj\\\\x86_64\" ^\n  \"-DCMAKE_BUILD_TYPE\u003dDebug\" ^\n  \"-BC:\\\\Users\\\\SSAFY\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\.cxx\\\\Debug\\\\7fo8673w\\\\x86_64\" ^\n  -GNinja ^\n  \"-DANDROID_STL\u003dc++_shared\"\n",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "message_": "@echo off\n\"C:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\cmake.exe\" ^\n  \"-HC:\\\\Users\\\\SSAFY\\\\Desktop\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\libcxx_helper\" ^\n  \"-DCMAKE_SYSTEM_NAME\u003dAndroid\" ^\n  \"-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\" ^\n  \"-DCMAKE_SYSTEM_VERSION\u003d21\" ^\n  \"-DANDROID_PLATFORM\u003dandroid-21\" ^\n  \"-DANDROID_ABI\u003dx86_64\" ^\n  \"-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\" ^\n  \"-DANDROID_NDK\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\" ^\n  \"-DCMAKE_ANDROID_NDK\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\" ^\n  \"-DCMAKE_TOOLCHAIN_FILE\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\23.1.7779620\\\\build\\\\cmake\\\\android.toolchain.cmake\" ^\n  \"-DCMAKE_MAKE_PROGRAM\u003dC:\\\\Users\\\\SSAFY\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\ninja.exe\" ^\n  \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\\\Users\\\\SSAFY\\\\Desktop\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\7fo8673w\\\\obj\\\\x86_64\" ^\n  \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\\\Users\\\\SSAFY\\\\Desktop\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\7fo8673w\\\\obj\\\\x86_64\" ^\n  \"-DCMAKE_BUILD_TYPE\u003dDebug\" ^\n  \"-BC:\\\\Users\\\\SSAFY\\\\Desktop\\\\project\\\\S11P31A307\\\\shieldrone-station-app\\\\opencv\\\\.cxx\\\\Debug\\\\7fo8673w\\\\x86_64\" ^\n  -GNinja ^\n  \"-DANDROID_STL\u003dc++_shared\"\n",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -95,12 +95,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -584848991
+    "memoizedHashCode": -543784519
   },
   {
     "level_": 0,
-    "message_": "Exiting generation of C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\\compile_commands.json.bin normally",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "message_": "Exiting generation of C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\\compile_commands.json.bin normally",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -109,12 +109,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 1853781025
+    "memoizedHashCode": 343192517
   },
   {
     "level_": 0,
     "message_": "done executing cmake",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -123,12 +123,12 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 601326507
+    "memoizedHashCode": 1120388591
   },
   {
     "level_": 0,
-    "message_": "hard linked C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\\compile_commands.json to C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\tools\\debug\\x86_64\\compile_commands.json",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "message_": "deleted unexpected build output C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\build\\intermediates\\cxx\\Debug\\7fo8673w\\obj\\x86_64\\libc++_shared.so in incremental regenerate",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -137,12 +137,26 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -533914989
+    "memoizedHashCode": 110492490
+  },
+  {
+    "level_": 0,
+    "message_": "hard linked C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\Debug\\7fo8673w\\x86_64\\compile_commands.json to C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\.cxx\\tools\\debug\\x86_64\\compile_commands.json",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -553248361
   },
   {
     "level_": 0,
     "message_": "JSON generation completed without problems",
-    "file_": "C:\\Users\\SSAFY\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
+    "file_": "C:\\Users\\SSAFY\\Desktop\\project\\S11P31A307\\shieldrone-station-app\\opencv\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|x86_64",
     "diagnosticCode_": 0,
     "memoizedIsInitialized": 1,
@@ -151,6 +165,6 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -1755567705
+    "memoizedHashCode": -1236505621
   }
 ]
