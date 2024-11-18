@@ -62,7 +62,10 @@ import com.ssafy.shieldroneapp.ui.components.AlertModal
 import com.ssafy.shieldroneapp.ui.components.AlertType
 import com.ssafy.shieldroneapp.ui.components.ConnectionStatusSnackbar
 import com.ssafy.shieldroneapp.ui.components.HeartRateDisplay
+import com.ssafy.shieldroneapp.ui.components.WatchConnectionBottomSheet
 import com.ssafy.shieldroneapp.ui.components.WatchConnectionManager
+import com.ssafy.shieldroneapp.ui.components.WatchConnectionUiState
+import com.ssafy.shieldroneapp.ui.components.WatchConnectionViewModel
 import com.ssafy.shieldroneapp.ui.map.screens.AlertHandler
 import com.ssafy.shieldroneapp.ui.map.screens.DroneAnimation
 import com.ssafy.shieldroneapp.ui.map.screens.DroneAssignmentFailureModal
@@ -97,6 +100,7 @@ fun MapScreen(
     mapViewModel: MapViewModel = hiltViewModel(),
     permissionViewModel: PermissionViewModel = hiltViewModel(),
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
+    watchConnectionViewModel: WatchConnectionViewModel = hiltViewModel(),
 ) {
     val state = mapViewModel.state.collectAsStateWithLifecycle().value
     val context = LocalContext.current
@@ -123,6 +127,12 @@ fun MapScreen(
     }.collectAsStateWithLifecycle()
     val connectionState = viewModel.watchConnectionState.collectAsStateWithLifecycle().value
     val alertState = mapViewModel.alertState.collectAsStateWithLifecycle().value
+
+    val connectionUiState by watchConnectionViewModel.uiState.collectAsStateWithLifecycle()
+
+    LaunchedEffect(Unit) {
+        watchConnectionViewModel.showConnection()
+    }
 
     // 워치 연결 관리
     WatchConnectionManager(
@@ -493,9 +503,17 @@ fun MapScreen(
                         .clickable {
                             state.droneState?.droneId?.let { droneId ->
                                 if (isMatchingAssigned) {
-                                    mapViewModel.handleEvent(MapEvent.RequestDroneCancel(DroneCancelRequest(droneId = droneId))) // 드론 배정 취소
+                                    mapViewModel.handleEvent(
+                                        MapEvent.RequestDroneCancel(
+                                            DroneCancelRequest(droneId = droneId)
+                                        )
+                                    ) // 드론 배정 취소
                                 } else {
-                                    mapViewModel.handleEvent(MapEvent.RequestServiceEnd(DroneCancelRequest(droneId = droneId))) // 서비스 종료
+                                    mapViewModel.handleEvent(
+                                        MapEvent.RequestServiceEnd(
+                                            DroneCancelRequest(droneId = droneId)
+                                        )
+                                    ) // 서비스 종료
                                 }
                                 mapViewModel.handleEvent(MapEvent.ClearDroneState) // 드론 상태 초기화
                                 mapViewModel.handleEvent(MapEvent.ClearLocationData) // 출발/도착지 정보 초기화
@@ -664,7 +682,7 @@ fun MapScreen(
 
         // 3-6) 드론 애니메이션
         if (state.showDroneAnimation) {
-            DroneAnimation (
+            DroneAnimation(
                 onAnimationEnd = {
                     mapViewModel.handleEvent(MapEvent.EndDroneAnimation)
                 }
@@ -719,10 +737,10 @@ fun MapScreen(
             safetyMessageSender = safetyMessageSender
         )
 
-        ConnectionStatusSnackbar(
-            connectionState = connectionState,
-            modifier = Modifier.align(Alignment.BottomCenter)
-        )
+//        ConnectionStatusSnackbar(
+//            connectionState = connectionState,
+//            modifier = Modifier.align(Alignment.BottomCenter)
+//        )
 
         // 심박수
         if (connectionState == WatchConnectionState.Connected || connectionState is WatchConnectionState.Connecting) {
@@ -737,6 +755,32 @@ fun MapScreen(
                 ) {
                     HeartRateDisplay(heartRate = heartRate)
                 }
+            }
+        }
+        if (connectionState == WatchConnectionState.Connected || connectionState is WatchConnectionState.Connecting) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 170.dp),
+                contentAlignment = Alignment.CenterEnd
+            ) {
+                Box(
+                    modifier = Modifier.padding(end = 4.dp)
+                ) {
+                    HeartRateDisplay(heartRate = heartRate)
+                }
+            }
+        }
+
+        when (val state = connectionUiState) {
+            is WatchConnectionUiState.Visible -> {
+                WatchConnectionBottomSheet(
+                    onDismiss = { watchConnectionViewModel.hideConnection() }
+                )
+            }
+
+            WatchConnectionUiState.Hidden -> {
+                // Modal이 숨겨진 상태
             }
         }
     }

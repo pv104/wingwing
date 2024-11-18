@@ -13,8 +13,8 @@ class AudioAnalyzer @Inject constructor() {
         private const val SAMPLE_RATE = 16000
 
         // 토스트 알림용 데시벨 범위
-        private const val TOAST_DECIBEL_MIN = 60.0
-        private const val TOAST_DECIBEL_MAX = 70.0
+        private const val TOAST_DECIBEL_MIN = 70.0
+        private const val TOAST_DECIBEL_MAX = 90.0
 
         // 서버 전송용 데시벨 임계값 (토스트 최대값 초과)
         private const val SERVER_DECIBEL_THRESHOLD = TOAST_DECIBEL_MAX

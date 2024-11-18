@@ -33,7 +33,7 @@ class DataRepository @Inject constructor(
     }
 
     companion object {
-        private const val THRESHOLD_BPM = 75.0
+        private const val THRESHOLD_BPM = 80.0
         private const val SUSTAINED_DURATION = 10000L
         private const val TAG = "워치: 데이터 레포"
     }

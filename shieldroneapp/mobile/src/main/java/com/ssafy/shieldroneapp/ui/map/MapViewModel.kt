@@ -58,8 +58,7 @@ class MapViewModel @Inject constructor(
 ) : ViewModel() {
     companion object {
         private const val TAG = "MapViewModel 모바일: 맵 뷰모델"
-        private const val TIMER_DURATION_MS = 10 * 60 * 1000L // 10분
-        private const val SEARCH_DEBOUNCE_MS = 50L // 50ms 디바운스
+        private const val SEARCH_DEBOUNCE_MS = 50L
     }
 
     private val _state = MutableStateFlow(MapState())
@@ -82,6 +81,13 @@ class MapViewModel @Inject constructor(
     init {
         handleEvent(MapEvent.LoadDroneState)
         handleEvent(MapEvent.LoadStartAndEndLocations)
+
+        // AlertRepository의 안전 확인 상태 변화 감지
+        viewModelScope.launch {
+            alertRepository.isSafeConfirmed.collect { isConfirmed ->
+                updateWatchConfirmation(isConfirmed)
+            }
+        }
     }
 
     // 전체 이벤트 핸들러
@@ -914,7 +920,7 @@ class MapViewModel @Inject constructor(
 
     suspend fun sendEmergencyAlert(): Boolean {
         // 워치에서 안전 확인된 경우 API 호출하지 않음
-        if (alertHandler.isWatchConfirmed()) {
+        if (_isWatchConfirmed.value) {
             return false
         }
 
